@@ -1,9 +1,13 @@
 body {
   background-color: #f8f9fa;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
 }
 
 .container {
   max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
 .task-board {
@@ -14,28 +18,78 @@ body {
 .task-column {
   flex: 1;
   background-color: #ffffff;
-  padding: 15px;
-  border-radius: 5px;
-  min-height: 300px; /* Ensures there's some height to the columns for drag-and-drop */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  min-height: 300px; /* Ensures visual consistency for drag-and-drop */
+  display: flex;
+  flex-direction: column;
 }
 
 .task {
-  background-color: #f0f0f0;
-  padding: 10px;
-  margin-bottom: 10px;
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 4px solid #007bff; /* Default color for tasks */
+}
+
+.task:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .task-placeholder {
-  border: 2px dashed #ccc;
+  border: 2px dashed #007bff;
   background-color: #f8f9fa;
   height: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
 }
 
 .task-due-near {
-  background-color: #fff3cd !important; /* Yellow */
+  border-left-color: #ffc107 !important; /* Yellow for tasks that are nearing their deadline */
 }
 
 .task-due-passed {
-  background-color: #f8d7da !important; /* Red */
+  border-left-color: #dc3545 !important; /* Red for overdue tasks */
+}
+
+/* Additional styling for buttons and form elements */
+.delete-task {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.delete-task:hover {
+  background-color: #c82333;
+}
+
+#taskForm input, #taskForm textarea {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 10px;
+}
+
+#taskForm button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#taskForm button[type="submit"]:hover {
+  background-color: #0056b3;
 }
