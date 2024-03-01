@@ -1,0 +1,41 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 900px;
+}
+
+.task-board {
+  display: flex;
+  gap: 20px;
+}
+
+.task-column {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  min-height: 300px; /* Ensures there's some height to the columns for drag-and-drop */
+}
+
+.task {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.task-placeholder {
+  border: 2px dashed #ccc;
+  background-color: #f8f9fa;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.task-due-near {
+  background-color: #fff3cd !important; /* Yellow */
+}
+
+.task-due-passed {
+  background-color: #f8d7da !important; /* Red */
+}
